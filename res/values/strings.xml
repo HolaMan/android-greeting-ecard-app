@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">com.hola.ecard</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_select_card">SelectCardActivity</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="title_activity_editing_card">EditingCard</string>
+
+</resources>
