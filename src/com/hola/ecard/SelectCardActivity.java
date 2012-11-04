@@ -12,10 +12,7 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.Window;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.SimpleAdapter;
 import android.view.*;
 
@@ -23,14 +20,18 @@ public class SelectCardActivity extends Activity {
 	private GridView gridView;
 	private ArrayList<HashMap<String, Object>> cardList = null;
 	
+	private void addCard(int card_resource_id, String cardName) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("ItemImage", card_resource_id);
+		map.put("ItemText", cardName);
+		cardList.add(map);
+	}
 	private void prepareCardList() {
+		
 		cardList = new ArrayList<HashMap<String, Object>>();
-		for (int i = 0; i < 30; i++) {
-			HashMap<String, Object> map = new HashMap<String, Object>();
-			map.put("ItemImage", R.drawable.xmas_card1_logo);
-			map.put("ItemText", "NO." + String.valueOf(i));
-			cardList.add(map);
-		}
+		addCard(R.drawable.xmas_card1_logo, "聖誕卡片 #1");
+		for (int i = 0; i < 30; i++)
+			addCard(R.drawable.xmas_card1_logo, "聖誕卡片 #" + String.valueOf(i+2));
 	}
 	
     @Override
@@ -49,12 +50,14 @@ public class SelectCardActivity extends Activity {
         		new String[] {"ItemImage","ItemText"}, 
         		new int[] {R.id.ItemImage,R.id.ItemText});
         
-        int display_mode = getResources().getConfiguration().orientation;
-        if (display_mode == 1) {
+        WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+        Display display = wm.getDefaultDisplay();
+        if( display.getWidth() <= 720 )
         	gridView.setNumColumns(2);
-        } else {
+        else if( display.getWidth() <= 1080 )
         	gridView.setNumColumns(3);
-        }        
+        else if( display.getWidth() > 1080 )
+        	gridView.setNumColumns(4);
         gridView.setAdapter(saImageItems);
         
         gridView.setOnItemClickListener(new GridView.OnItemClickListener(){

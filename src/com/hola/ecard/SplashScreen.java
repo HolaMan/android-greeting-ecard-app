@@ -31,14 +31,6 @@ public class SplashScreen extends Activity {
                 Intent intent = new Intent(SplashScreen.this, SelectCardActivity.class);
                 SplashScreen.this.startActivity(intent); 
             } 
-        }, 2000); // time in milliseconds (1 second = 1000 milliseconds)
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_splash_screen, menu);
-        return true;
-    }
-
-    
+        }, 100); // time in milliseconds (1 second = 1000 milliseconds)
+    }    
 }
