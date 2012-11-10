@@ -38,16 +38,17 @@ public class EditingCard extends Activity {
     	requestWindowFeature(Window.FEATURE_NO_TITLE);
     	super.onCreate(savedInstanceState);
                 
-        int display_mode = getResources().getConfiguration().orientation;
-        if( display_mode == 1 ) {
-        	setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        	setContentView(R.layout.activity_editing_card);
-        }
-        else {
-        	LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        	cardRoot = layoutInflater.inflate(R.layout.xmas_card1, null);            
-        	setContentView(cardRoot);
-        }
+    	int cardIndex = this.getIntent().getIntExtra("CardIndex", 0);
+    	int layout_id = R.layout.xmas_card1;
+    	if( cardIndex == 2 )
+    		layout_id = R.layout.xmas_card2;
+    	else if( cardIndex == 3 )
+    		layout_id = R.layout.xmas_card3;    	else if( cardIndex == 4 )
+    		layout_id = R.layout.xmas_card4;
+    	
+        LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        cardRoot = layoutInflater.inflate(layout_id, null);            
+        setContentView(cardRoot);
     }
 
     @Override
@@ -64,13 +65,24 @@ public class EditingCard extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+    protected void ShowHideIconButtons(boolean show) {
+		ImageView v1 = (ImageView) this.findViewById(R.id.imageViewCamera);
+		ImageView v2 = (ImageView) this.findViewById(R.id.imageViewGallery);
+		if( v1 != null )
+			v1.setVisibility(show ? View.VISIBLE : View.INVISIBLE);
+		if( v2 != null )
+			v2.setVisibility(show ? View.VISIBLE : View.INVISIBLE);
+    }
     protected File CardScreenCapture() {
     	if( cardRoot != null ) {
+    		ShowHideIconButtons(false);
     		
     		cardRoot.setDrawingCacheEnabled(true);
     		cardRoot.buildDrawingCache(true);
     		Bitmap bitmap = Bitmap.createBitmap(cardRoot.getDrawingCache());
     		cardRoot.setDrawingCacheEnabled(false);
+    		
+    		ShowHideIconButtons(true);    		
     		
     		String filename = String.format("card_%s.jpg", UUID.randomUUID());
             File file = new File(Environment.getExternalStorageDirectory(), filename);

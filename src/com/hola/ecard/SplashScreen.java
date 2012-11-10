@@ -23,12 +23,11 @@ public class SplashScreen extends Activity {
         // go to the select card activity after splash
         Handler handler = new Handler();        
         handler.postDelayed(new Runnable() { 
-            @Override
             public void run() { 
                 // make sure we close the splash screen so the user won't come back when it presses back key 
                 finish();
                 // start the home screen 
-                Intent intent = new Intent(SplashScreen.this, SelectCardActivity.class);
+                Intent intent = new Intent(SplashScreen.this, SimpleSelectCard.class);
                 SplashScreen.this.startActivity(intent); 
             } 
         }, 100); // time in milliseconds (1 second = 1000 milliseconds)

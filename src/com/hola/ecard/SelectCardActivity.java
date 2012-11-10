@@ -61,7 +61,6 @@ public class SelectCardActivity extends Activity {
         gridView.setAdapter(saImageItems);
         
         gridView.setOnItemClickListener(new GridView.OnItemClickListener(){
-           @Override
            public void onItemClick(AdapterView adapterView,View view,int position,long id) {
         	   Intent intent = new Intent(SelectCardActivity.this, EditingCard.class);
         	   SelectCardActivity.this.startActivity(intent);

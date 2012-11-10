@@ -1,0 +1,47 @@
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000" >
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_x="26dp"
+        android:layout_y="24dp"
+        android:scaleType="fitXY"
+        android:onClick="selectCard"
+        android:src="@drawable/xmas_card1_logo" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_x="189dp"
+        android:layout_y="27dp"
+        android:onClick="selectCard"
+        android:scaleType="fitXY"
+        android:src="@drawable/xmas_card2_logo" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_x="193dp"
+        android:layout_y="206dp"
+        android:onClick="selectCard"
+        android:scaleType="fitXY"
+        android:src="@drawable/xmas_card4_logo" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_x="26dp"
+        android:layout_y="208dp"
+        android:onClick="selectCard"
+        android:scaleType="fitXY"
+        android:src="@drawable/xmas_card3_logo" />
+
+</AbsoluteLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_x="0dp"
+        android:layout_y="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/xmas_card3_bg" />
+
+    <ImageView
+        android:id="@+id/xmasProfile"
+        android:layout_width="331dp"
+        android:layout_height="132dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="14dp"
+        android:layout_x="14dp"
+        android:layout_y="16dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/xmas_person" />
+
+    <ImageView
+        android:id="@+id/imageViewCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_x="316dp"
+        android:layout_y="69dp"
+        android:onClick="onClickCamera"
+        android:src="@android:drawable/ic_menu_camera" />
+
+    <ImageView
+        android:id="@+id/imageViewGallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_x="314dp"
+        android:layout_y="19dp"
+        android:onClick="onClickGallery"
+        android:src="@android:drawable/ic_menu_gallery" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="116dp"
+        android:layout_height="35dp"
+        android:layout_x="77dp"
+        android:layout_y="166dp"
+        android:background="#40ffffff"
+        android:ems="10"
+        android:text="Michelle"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="13dp"
+        android:layout_y="171dp"
+        android:text="Dear"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="331dp"
+        android:layout_height="97dp"
+        android:layout_x="16dp"
+        android:layout_y="349dp"
+        android:background="#00ffffff"
+        android:ems="10"
+        android:text="Long time no see.... how are you recently?  Take care yourself and mery christmas!!!"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="121dp"
+        android:layout_height="45dp"
+        android:layout_x="190dp"
+        android:layout_y="476dp"
+        android:background="#40ffffff"
+        android:ems="10"
+        android:text="Chris Chang"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="29dp"
+        android:layout_y="484dp"
+        android:text="your best friend, "
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffff" />
+
+</AbsoluteLayout>
